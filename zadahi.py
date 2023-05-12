@@ -183,10 +183,21 @@ print(quarter_of(month))
 # switch_it_up(10000) -> None
 # Использовать условный оператор if-elif-else нельзя!
 
-def switch_it_up(number):
-    pass
-
-
+def switch_it_up(number: int) -> str:
+    ''' This function returns number (0-9) in words. '''
+    dict_num = {
+        0: 'Zero',
+        1: 'One',
+        2: 'Two',
+        3: 'Three',
+        4: 'Four',
+        5: 'Five',
+        6: 'Six',
+        7: 'Seven',
+        8: 'Eight',
+        9: 'Nine'
+    }
+    return dict_num.get(number)
 
 
 
@@ -200,8 +211,14 @@ def switch_it_up(number):
 # foo("") -> ""
 # foo("Oh, no!!!") -> "Oh, no"
 
-def remove_exclamation_marks(s):
-    pass
+import string
+ 
+if __name__ == '__main__':
+ 
+    s = 'Hi! Hello!'
+ 
+    s = s.translate(str.maketrans('', '', string.punctuation))
+    print(s)
 
 
 # Пункт B.
@@ -210,9 +227,12 @@ def remove_exclamation_marks(s):
 # remove("Hi!!!") == "Hi!!"
 # remove("!Hi") == "!Hi"
 
-def remove_last_em(s):
-    pass
-
+def remove(text):
+    i = 0
+    while i < 3 and text[-1]=="!":
+        text = text[:-1]
+        i += 1
+    return text
 
 # Дополнительно
 
@@ -228,5 +248,10 @@ def remove_last_em(s):
 # remove("Hi! Hi!! Hi!") === "Hi!!"
 # remove("Hi! !Hi! Hi!") === "!Hi!"
 
-def remove_word_with_one_em(s):
-    pass
+def remove(s):
+    if not s:
+        return ''
+
+    if s[len(s)-1] == '!':
+        return s[:len(s)-1]
+    return s
