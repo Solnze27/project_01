@@ -135,8 +135,6 @@ for name_titles in titles:
 # * [5]                             -> min = 5, max = 5
 # функции max и min использовать нельзя!
 
-def minimum(arr):
-    pass
 
 def maximum(arr):
     pass
